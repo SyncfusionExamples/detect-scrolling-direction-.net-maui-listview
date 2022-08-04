@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="ListViewMaui.MainPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ListViewMaui"
+             xmlns:listView="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"   
+             BackgroundColor="White">
+
+    <listView:SfListView x:Name="listView" ItemsSource="{Binding BookInfo}" ItemSize="120" IsStickyHeader="True">
+       
+        <listView:SfListView.Behaviors>
+            <local:Behavior/>
+        </listView:SfListView.Behaviors>
+        
+        <listView:SfListView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout>
+                    <StackLayout Margin="10,0,0,0" VerticalOptions="StartAndExpand">
+                        <Label Text="{Binding BookName}" FontSize="20" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                        <Label Text="{Binding BookDescription}" FontSize="15" VerticalOptions="StartAndExpand"/>
+                    </StackLayout>
+                    <StackLayout HeightRequest="1" BackgroundColor="LightGray"/>
+                </StackLayout>
+            </DataTemplate>
+        </listView:SfListView.ItemTemplate>
+
+        <listView:SfListView.HeaderTemplate>
+            <DataTemplate>
+                <StackLayout BackgroundColor="LightGray">
+                    <Label Text="{Binding Path=BindingContext.ScrollDirection, Source={x:Reference listView}}" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+                </StackLayout>
+            </DataTemplate>
+        </listView:SfListView.HeaderTemplate>
+    </listView:SfListView>
+</ContentPage>
