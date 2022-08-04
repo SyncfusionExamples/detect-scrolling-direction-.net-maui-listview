@@ -1,2 +1,1 @@
-# detect-scrolling-direction-.net-maui-listview
-How to detect scrolling direction in .NET MAUI ListView (SfListView) ?
+**[View document in Syncfusion .NET MAUI Knowledge Base](https://www.syncfusion.com/kb/13575/how-to-detect-scrolling-direction-in-net-maui-listview-sflistview)**
